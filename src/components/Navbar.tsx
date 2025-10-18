@@ -37,7 +37,7 @@ const Navbar = () => {
     ]
 
     return (
-        <nav className="flex gap-6 items-center justify-center w-2/3 py-6 my-4 shadow shadow-black rounded-md">
+        <nav className="fixed top-1 flex gap-6 items-center justify-center w-2/3 py-6 my-4 shadow shadow-black rounded-md">
             {navitems.map((item, index) => {
                 return (
                     <NavItem key={index} title={item.title} icon={item.icon} href={item.href} />
