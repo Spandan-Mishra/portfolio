@@ -30,7 +30,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <div ref={heroRef} className="text-9xl flex min-h-screen items-center justify-center">
+        <div ref={heroRef} className="text-8xl flex min-h-screen items-center justify-center z-0">
             I am Spandan Mishra
         </div>
     );
