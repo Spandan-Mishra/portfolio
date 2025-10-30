@@ -37,13 +37,11 @@ const Navbar = () => {
     ]
 
     return (
-        <nav className="w-full fixed top-1 flex items-center justify-center py-6 z-10">
-            <div className="flex w-2/3 items-center justify-center gap-6 shadow shadow-primary rounded-md py-6">
-                {navitems.map((item, index) => {
-                    return (
-                        <NavItem key={index} title={item.title} icon={item.icon} href={item.href} />
-                    )
-                })}
+        <nav className="fixed top-0 left-0 w-full flex items-center justify-center py-6 z-50">
+            <div className="flex w-2/3 items-center justify-center gap-6 shadow shadow-primary rounded-md py-6 bg-transparent">
+                {navitems.map((item, index) => (
+                    <NavItem key={index} title={item.title} icon={item.icon} href={item.href} />
+                ))}
             </div>
         </nav>
     )
