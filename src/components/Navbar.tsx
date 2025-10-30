@@ -1,49 +1,55 @@
+"use client";
 
 import NavItem from "./NavItem"
 import { CodeIcon, GitHubLogoIcon, HomeIcon, LayersIcon, LinkedInLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons"
+import { Menu } from "./ui/navbar-menu"
+import { useState } from "react"
+
+const navitems = [
+    {
+        title: "Home",
+        icon: <HomeIcon />,
+        href: "/"
+    },
+    {
+        title: "Projects",
+        icon: <CodeIcon />,
+        href: "/projects"
+    },
+    {
+        title: "Blogs",
+        icon: <LayersIcon />,
+        href: "/blogs"
+    },
+    {
+        title: "Github",
+        icon: <GitHubLogoIcon />,
+        href: "https://github.com/Spandan-Mishra"
+    },
+    {
+        title: "LinkedIn",
+        icon: <LinkedInLogoIcon />,
+        href: "https://www.linkedin.com/in/spandan-mishra-a584b7302/"
+    },
+    {
+        title: "X",
+        icon: <TwitterLogoIcon />,
+        href: "https://twitter.com/spandev_"
+    }
+]
 
 const Navbar = () => {
-    const navitems = [
-        {
-            title: "Home",
-            icon: <HomeIcon />,
-            href: "/"
-        },
-        {
-            title: "Projects",
-            icon: <CodeIcon />,
-            href: "/projects"
-        },
-        {
-            title: "Blogs",
-            icon: <LayersIcon />,
-            href: "/blogs"
-        },
-        {
-            title: "Github",
-            icon: <GitHubLogoIcon />,
-            href: "https://github.com/Spandan-Mishra"
-        },
-        {
-            title: "LinkedIn",
-            icon: <LinkedInLogoIcon />,
-            href: "https://www.linkedin.com/in/spandan-mishra-a584b7302/"
-        },
-        {
-            title: "X",
-            icon: <TwitterLogoIcon />,
-            href: "https://twitter.com/spandev_"
-        }
-    ]
 
     return (
-        <nav className="fixed top-0 left-0 w-full flex items-center justify-center py-6 z-50">
-            <div className="flex w-2/3 items-center justify-center gap-6 shadow shadow-primary rounded-md py-6 bg-transparent">
-                {navitems.map((item, index) => (
-                    <NavItem key={index} title={item.title} icon={item.icon} href={item.href} />
-                ))}
+        <div className="relative w-full flex items-center justify-center">
+            <div className="fixed top-10 inset-x-0 max-w-2xl mx-auto z-50 shadow shadow-primary rounded-md">
+                <Menu setActive={() => {}}>
+                    {navitems.map((item, index) => (
+                        <NavItem key={index} title={item.title} icon={item.icon} href={item.href} />
+                    ))}
+                </Menu>
             </div>
-        </nav>
+        </div>
     )
 }
 
