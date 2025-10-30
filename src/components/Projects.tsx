@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group";
 
 const categories = ["Full-Stack", "Web3", "Hackathons", "Machine Learning"];
 
@@ -15,29 +16,38 @@ const projects: Array<{
 ]
 
 const Projects = () => {
-    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+    const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
     console.log("Selected Category:", selectedCategory);
 
-    const filteredProjects = selectedCategory
+    const filteredProjects = selectedCategory && selectedCategory !== "All"
         ? projects.filter(project => project.category === selectedCategory)
         : projects;
 
     return (
         <div className="flex flex-col w-full items-center">
-            <div className="text-5xl mt-6">
+            <div className="text-2xl mb-4">
                 Projects
             </div>
-            <div className="w-3/5 my-6 flex gap-4 justify-center">
-                <div className="border p-2 rounded-md hover:bg-secondary cursor-pointer" onClick={() => setSelectedCategory(null)}>
+            <ToggleGroup
+                type="single"
+                value={selectedCategory}
+                onValueChange={(val) => {
+                    if (!val) return;
+                    setSelectedCategory(val);
+                }}
+                variant="outline"
+                aria-label="Project categories"
+            >
+                <ToggleGroupItem value="All" aria-label="Projects">
                     All
-                </div>
-                {categories.map((category, index) => (
-                    <div key={index} className="border p-2 rounded-md hover:bg-secondary cursor-pointer" onClick={() => setSelectedCategory(category)}>
+                </ToggleGroupItem>
+                {categories.map((category) => (
+                    <ToggleGroupItem key={category} value={category} aria-label={category}>
                         {category}
-                    </div>
+                    </ToggleGroupItem>
                 ))}
-            </div>
+            </ToggleGroup>
             <div className="w-2/3 my-12 flex flex-col gap-6">
                 {filteredProjects.length > 0 ?
                     filteredProjects.map((project, index) => (
@@ -62,7 +72,7 @@ const Projects = () => {
                     ))
                     :
                     <div className="text-center text-secondary">
-                        No {selectedCategory} projects made yet. Still learning this technology!
+                        No {selectedCategory !== "All" ? selectedCategory : null} projects made yet. Still learning this technology!
                     </div>
                 }
             </div>

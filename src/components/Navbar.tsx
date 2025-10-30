@@ -1,6 +1,6 @@
 
 import NavItem from "./NavItem"
-import { CodeIcon, GitHubLogoIcon, HomeIcon, LayersIcon, LinkedInLogoIcon, PersonIcon, TwitterLogoIcon } from "@radix-ui/react-icons"
+import { CodeIcon, GitHubLogoIcon, HomeIcon, LayersIcon, LinkedInLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons"
 
 const Navbar = () => {
     const navitems = [
