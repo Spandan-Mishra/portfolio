@@ -3,7 +3,6 @@
 import NavItem from "./NavItem"
 import { CodeIcon, GitHubLogoIcon, HomeIcon, LayersIcon, LinkedInLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons"
 import { Menu } from "./ui/navbar-menu"
-import { useState } from "react"
 
 const navitems = [
     {
@@ -12,9 +11,9 @@ const navitems = [
         href: "/"
     },
     {
-        title: "Projects",
+        title: "Proof of Work",
         icon: <CodeIcon />,
-        href: "/projects"
+        href: "/#pow"
     },
     {
         title: "Blogs",

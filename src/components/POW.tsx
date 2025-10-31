@@ -9,7 +9,7 @@ const POW = () => {
     const [selectedOption, setSelectedOption] = useState<string>("Projects");
     console.log("Selected Option:", selectedOption);
     return (
-        <div className="flex flex-col w-full items-center gap-6">
+        <div id="pow" className="flex flex-col w-full items-center gap-6">
             <div className="text-3xl mt-6">
                 Proof of Work
             </div>
