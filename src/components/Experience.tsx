@@ -1,4 +1,3 @@
-import { InstagramLogoIcon } from "@radix-ui/react-icons"
 
 const experiences = [
     {
@@ -12,7 +11,7 @@ const experiences = [
 const Experience = () => {
     return (
         <div className="flex flex-col w-full items-center">
-            <div className="text-5xl mt-6">
+            <div className="text-3xl mt-6">
                 Work Experience
             </div>
             <div className="w-2/3 my-12">
@@ -21,11 +20,11 @@ const Experience = () => {
                         <div className="flex gap-4 items-center">
                             {item.icon}
                             <div className="flex flex-col">
-                                <p className="font-bold text-lg">{item.company}</p>
-                                <p className="text-secondary">{item.position}</p>
+                                <p className="font-bold text-md">{item.company}</p>
+                                <p className="text-secondary text-sm">{item.position}</p>
                             </div>
                         </div>
-                        <div className="text-secondary flex items-center">
+                        <div className="text-secondary flex items-center text-sm">
                             {item.duration}
                         </div>
                     </div>

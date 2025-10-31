@@ -26,7 +26,7 @@ const Projects = () => {
 
     return (
         <div className="flex flex-col w-full items-center">
-            <div className="text-2xl mb-4">
+            <div className="text-xl mb-4">
                 Projects
             </div>
             <ToggleGroup
@@ -52,7 +52,7 @@ const Projects = () => {
                 {filteredProjects.length > 0 ?
                     filteredProjects.map((project, index) => (
                     <div className="border p-4 rounded-md" key={index}>
-                        <div className="text-2xl font-bold">
+                        <div className="font-bold">
                             {project.title}
                         </div>
                             <div className="text-secondary my-2">
@@ -71,7 +71,7 @@ const Projects = () => {
                         </div>
                     ))
                     :
-                    <div className="text-center text-secondary">
+                    <div className="text-sm text-center text-secondary">
                         No {selectedCategory !== "All" ? selectedCategory : null} projects made yet. Still learning this technology!
                     </div>
                 }
