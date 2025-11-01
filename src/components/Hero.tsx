@@ -41,7 +41,7 @@ const Hero = () => {
                 )}
             />
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
-            <p ref={heroRef} className="relative z-20 bg-gradient-to-b from-primary to-gray-500 bg-clip-text py-8 text-4xl font-bold text-transparent sm:text-8xl">
+            <p ref={heroRef} className="--font-oswald relative z-20 bg-gradient-to-b from-primary to-gray-500 bg-clip-text py-8 text-4xl font-bold text-transparent sm:text-8xl">
                 I am Spandan Mishra
             </p>
         </div>

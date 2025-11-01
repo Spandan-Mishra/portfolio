@@ -33,7 +33,7 @@ const navitems = [
     {
         title: "X",
         icon: <TwitterLogoIcon />,
-        href: "https://twitter.com/spandev_"
+        href: "https://twitter.com/intent/follow?screen_name=spandev_"
     }
 ]
 
