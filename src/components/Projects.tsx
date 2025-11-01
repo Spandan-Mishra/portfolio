@@ -18,8 +18,6 @@ const projects: Array<{
 const Projects = () => {
     const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
-    console.log("Selected Category:", selectedCategory);
-
     const filteredProjects = selectedCategory && selectedCategory !== "All"
         ? projects.filter(project => project.category === selectedCategory)
         : projects;

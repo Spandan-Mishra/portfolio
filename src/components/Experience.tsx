@@ -1,20 +1,22 @@
+import dayjs from "dayjs"
 
 const experiences = [
     {
         icon: <img src="/GSoC-icon.svg" width={60} height={60}></img>,
         position: "Open Source Contributor",
         company: "Google Summer of Code",
-        duration: "May 2025 - September 2025"
+        from: "2025-05",
+        to: "2025-09",
     }
 ]
 
 const Experience = () => {
     return (
-        <div className="flex flex-col w-full items-center">
-            <div className="text-3xl mt-6">
+        <div className="flex flex-col w-full items-center my-4">
+            <div className="text-3xl font-bold">
                 Work Experience
             </div>
-            <div className="w-2/3 my-12">
+            <div className="w-2/3 my-4">
                 {experiences.map((item, index) => (
                     <div className="flex justify-between p-2 rounded-md" key={index}>
                         <div className="flex gap-4 items-center">
@@ -25,7 +27,10 @@ const Experience = () => {
                             </div>
                         </div>
                         <div className="text-secondary flex items-center text-sm">
-                            {item.duration}
+                            {dayjs(item.to).isBefore(dayjs())
+                                ? `${dayjs(item.from).format('MMMM YYYY')} - ${dayjs(item.to).format('MMMM YYYY')}`
+                                : 'Present'
+                            }
                         </div>
                     </div>
                 ))}

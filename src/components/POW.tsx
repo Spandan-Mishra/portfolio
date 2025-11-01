@@ -7,10 +7,10 @@ import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group";
 
 const POW = () => {
     const [selectedOption, setSelectedOption] = useState<string>("Projects");
-    console.log("Selected Option:", selectedOption);
+
     return (
-        <div id="pow" className="flex flex-col w-full items-center gap-6">
-            <div className="text-3xl mt-6">
+        <div id="pow" className="flex flex-col w-full items-center gap-6 my-4">
+            <div className="text-3xl font-bold">
                 Proof of Work
             </div>
             <ToggleGroup
