@@ -2,16 +2,11 @@
 
 import { useState } from "react";
 import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group";
+import Project from "../types/project";
 
 const categories = ["Full-Stack", "Web3", "Hackathons", "Machine Learning"];
 
-const projects: Array<{
-    title: string;
-    description: string;
-    category: string;
-    technologies: string[];
-    link: string;
-}> = [
+const projects: Project[] = [
     // TODO: projects data to be filled here
 ]
 

@@ -25,7 +25,6 @@ const NavItem = ({
 
         const [pathPart, hash] = href.split("#")
         const targetPath = pathPart === "" ? "/" : pathPart
-        console.log(pathPart, hash, targetPath)
 
         if (pathname === targetPath) {
             if (hash) {
