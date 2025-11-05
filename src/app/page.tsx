@@ -1,5 +1,6 @@
 import Educations from "../components/Educations";
 import Experiences from "../components/Experiences";
+import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import POW from "../components/POW";
 import Skills from "../components/Skills";
@@ -12,6 +13,7 @@ export default function Home() {
       <POW />
       <Educations />
       <Skills />
+      <Footer />
     </div>
   );
 }
