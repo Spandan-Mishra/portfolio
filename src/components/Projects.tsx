@@ -2,13 +2,11 @@
 
 import { useState } from "react";
 import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group";
-import Project from "../types/project";
+import projects from "../data/projects";
+import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import { Button } from "./ui/button";
 
-const categories = ["Full-Stack", "Web3", "Hackathons", "Machine Learning"];
-
-const projects: Project[] = [
-    // TODO: projects data to be filled here
-]
+const categories = ["Full-Stack", "Web3", "Hackathons", "Experimenting", "Machine Learning"];
 
 const Projects = () => {
     const [selectedCategory, setSelectedCategory] = useState<string>("All");
@@ -42,31 +40,32 @@ const Projects = () => {
                 ))}
             </ToggleGroup>
             <div className="w-2/3 my-12 flex flex-col gap-6">
-                {filteredProjects.length > 0 ?
+                {filteredProjects.length !== 0 ?
                     filteredProjects.map((project, index) => (
-                    <div className="border p-4 rounded-md" key={index}>
-                        <div className="font-bold">
-                            {project.title}
-                        </div>
-                            <div className="text-secondary my-2">
-                                {project.description}
-                            </div>
-                            <div className="flex gap-2 flex-wrap my-2">
-                                {project.technologies.map((tech, techIndex) => (
-                                    <div key={techIndex} className="border px-2 py-1 rounded-md text-sm">
-                                        {tech}
-                                    </div>
+                        <Card className="w-full" key={index}>
+                            <CardHeader>
+                                <CardTitle>{project.title}</CardTitle>
+                                <CardDescription className="w-5/6">{project.description}</CardDescription>
+                                <CardAction>
+                                    <a
+                                        href={project.link}
+                                        className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+                                    >
+                                        View Project
+                                    </a>
+                                </CardAction>
+                            </CardHeader>
+                            <CardContent>
+                                {project.technologies.map((tech, tIndex) => (
+                                    <Button variant="outline" size="xs" className="mr-2" key={tIndex}>{tech}</Button>
                                 ))}
-                            </div>
-                            <a href={project.link} target="_blank" className="text-primary underline">
-                                View Project
-                            </a>
-                        </div>
+                            </CardContent>
+                        </Card>
                     ))
-                    :
-                    <div className="text-sm text-center text-secondary">
-                        No {selectedCategory !== "All" ? selectedCategory : null} projects made yet. Still learning this technology!
-                    </div>
+                :
+                <div className="text-sm text-center text-secondary">
+                    No {selectedCategory !== "All" ? selectedCategory : null} projects made yet. Still learning this technology!
+                </div>
                 }
             </div>
         </div>
