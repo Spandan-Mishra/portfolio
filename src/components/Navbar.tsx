@@ -18,7 +18,7 @@ const navitems = [
     {
         title: "Blogs",
         icon: <LayersIcon />,
-        href: "/blogs"
+        href: "/"
     },
     {
         title: "Github",
