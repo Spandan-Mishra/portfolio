@@ -42,7 +42,7 @@ const Projects = () => {
             <div className="w-2/3 my-12 flex flex-col gap-6">
                 {filteredProjects.length !== 0 ?
                     filteredProjects.map((project, index) => (
-                        <Card className="w-full" key={index}>
+                        <Card className="w-full hover:shadow-md transition-shadow" key={index}>
                             <CardHeader>
                                 <CardTitle>{project.title}</CardTitle>
                                 <CardDescription className="w-5/6">{project.description}</CardDescription>
