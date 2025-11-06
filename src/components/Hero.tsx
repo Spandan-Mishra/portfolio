@@ -8,27 +8,27 @@ import { useEffect, useRef } from "react";
 gsap.registerPlugin(SplitText);
 
 const Hero = () => {
-    const heroRef = useRef<HTMLDivElement>(null);
+    // const heroRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const hero = heroRef.current;
+    // useEffect(() => {
+    //     const hero = heroRef.current;
 
-        if (!hero) return;
+    //     if (!hero) return;
 
-        SplitText.create(hero, {
-            type: "lines, words",
-            mask: "lines",
-            autoSplit: true,
-            onSplit(self) {
-                return gsap.from(self.words, {
-                    duration: 1,
-                    y: 100,
-                    autoAlpha: 0,
-                    stagger: 0.05,
-                });
-            },
-        });
-    }, []);
+    //     SplitText.create(hero, {
+    //         type: "lines, words",
+    //         mask: "lines",
+    //         autoSplit: true,
+    //         onSplit(self) {
+    //             return gsap.from(self.words, {
+    //                 duration: 1,
+    //                 y: 100,
+    //                 autoAlpha: 0,
+    //                 stagger: 0.05,
+    //             });
+    //         },
+    //     });
+    // }, []);
 
     return (
         <div className="relative flex h-[50rem] w-full items-center justify-center bg-white dark:bg-black min-h-screen">
@@ -41,7 +41,7 @@ const Hero = () => {
                 )}
             />
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
-            <p ref={heroRef} className="relative z-20 bg-gradient-to-b from-primary to-gray-500 bg-clip-text py-8 text-4xl font-bold text-transparent sm:text-9xl">
+            <p className="relative z-20 bg-gradient-to-b from-primary to-gray-500 bg-clip-text py-8 text-4xl font-bold text-transparent sm:text-9xl">
                 I am Spandan Mishra
             </p>
         </div>
