@@ -7,6 +7,13 @@ import { containerVariants, itemVariants } from "../lib/motion"
 
 const experiences: Experience[] = [
     {
+        icon: <img src="/Tredence-logo.svg" width={60} height={60}></img>,
+        position: "AI Engeering Intern",
+        company: "Tredence",
+        from: "2026-05",
+        to: "2026-07",
+    },
+    {
         icon: <img src="/GSoC-icon.svg" width={60} height={60}></img>,
         position: "Open Source Contributor",
         company: "Google Summer of Code",
@@ -21,7 +28,7 @@ const Experiences = () => {
             <motion.div className="text-3xl font-bold" variants={itemVariants}>
                 Work Experience
             </motion.div>
-            <motion.div className="sm:w-2/3 my-4" variants={containerVariants} initial="hidden" whileInView="visible">
+            <motion.div className="flex flex-col gap-6 sm:w-2/3 my-4" variants={containerVariants} initial="hidden" whileInView="visible">
                 {experiences.map((item, index) => (
                     <motion.div className="flex justify-between p-2 rounded-md" key={index} variants={itemVariants}>
                         <div className="flex gap-4 items-center">
