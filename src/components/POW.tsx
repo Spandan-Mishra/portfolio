@@ -27,10 +27,8 @@ const POW = () => {
                     if (Object.values(Orgs).includes(p.url.split('/')[4].toLowerCase())) return true;
                     return false;
                 })
-                console.log(data);
                 setPRs(data);
             } catch (error) {
-                console.log(error);
                 setError("Failed to fetch PRs");
             } finally {
                 setLoading(false);

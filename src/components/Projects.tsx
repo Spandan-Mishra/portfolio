@@ -18,7 +18,6 @@ const Projects = () => {
         ? projects.filter(project => project.category.includes(selectedCategory))
         : projects;
 
-    console.log(filteredProjects);
 
     return (
         <motion.div
